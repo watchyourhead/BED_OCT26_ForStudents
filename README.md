@@ -20,7 +20,9 @@ More tags are added here as each session is taught.
 
 ## Run it
 
-You need Node.js installed.
+You need Node.js installed. It comes with npm.
+
+The `node_modules` folder is **not** in this repo. It is listed in `.gitignore` because it is large and npm can rebuild it. A fresh clone will not run until you install the modules.
 
 ```bash
 git clone <this repo's URL>
@@ -28,6 +30,23 @@ cd bookcat-api
 npm install
 npm start
 ```
+
+`npm install` reads `package.json` and downloads every module the project needs into a new `node_modules` folder. Run it again each time you check out a different tag, because the list of modules grows as the course goes on.
+
+| Module | What it does | Needed from |
+|---|---|---|
+| `express` | The web framework: routes, requests and responses | `s01-oal-end` |
+| `mssql` | Connects to SQL Server and runs queries | `s02-ipl-end` |
+| `dotenv` | Loads the settings in `.env` into `process.env` | `s02-oal-end` |
+
+If you are building the project yourself in an empty folder instead of cloning, create `package.json` first and then install the modules by name:
+
+```bash
+npm init -y
+npm install express mssql dotenv
+```
+
+If you see `Error: Cannot find module 'express'` (or another module name), you have not run `npm install` in this folder yet. Run it and try again.
 
 From Session 2 onward the routes need the **NP Bookstore** database on your own SQL Server.
 
