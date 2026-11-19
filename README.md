@@ -10,14 +10,6 @@ There is one branch, `main`, and each session ends at a **tag**. A tag is a labe
 
 Each session has an IPL (the 3-hour class) and an OAL (the 1-hour online work before the next class).
 
-| Tag | What the code looks like |
-|---|---|
-| `s01-oal-end` | Node, npm and Express running. `GET /` and `GET /categories` (a hardcoded array). This is also the starting point for Session 2. |
-| `s02-ipl-end` | The live-coded routes against the NP Bookstore `Author` table: `GET /authors`, `GET /authors/:id`, `POST`, `PUT` and `DELETE`, each with `try / catch / finally`, `parseInt`, bound inputs and the right status code. |
-| `s02-oal-end` | Settings move into a `.env` file (`dotenv`, `.env.example`, `.env` in `.gitignore`). Adds `docs/api-contract-authors.md`, a worked API contract table. This is also the starting point for Session 3. |
-
-More tags are added here as each session is taught.
-
 ## Run it
 
 You need Node.js installed. It comes with npm.
@@ -58,20 +50,6 @@ Then open <http://localhost:3000/> in a browser. The files in `requests/` list t
 ## Look at a session, or live-code it
 
 You do not need to be a collaborator, and you cannot push to this repo. Clone it and work on your own copy.
-
-```bash
-# See the code exactly as it was at the end of a session (read-only view)
-git checkout s01-oal-end
-
-# Start a session live, from where the previous one ended
-git switch -c my-demo s01-oal-end
-
-# See what changed between two points
-git diff s01-oal-end s02-ipl-end
-
-# Return to the latest code
-git switch main
-```
 
 You can also download any tag as a zip from the repository's **Releases** or **Tags** page on GitHub.
 
